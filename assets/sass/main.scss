@@ -117,7 +117,7 @@
 	html {
 		background-color:		_palette(accent2, bg);
 		background-attachment:	fixed,						fixed;
-		background-image:		url('images/overlay.png'),	url('../../images/bg.jpg');
+		background-image:		url('images/overlay.png'),	url('../../images/farhan_bg.png');
 		background-position:	top left,					center center;
 		background-repeat:		repeat,						none;
 		background-size:		auto,						cover;
@@ -288,7 +288,7 @@
 	.container {
 		margin: 0 auto;
 		max-width: calc(100% - #{_size(element-margin) * 2});
-		width: _size(container-width);
+		width: (_size(container-width) * 1.75);
 
 		&.xsmall {
 			width: (_size(container-width) * 0.25);
@@ -303,11 +303,11 @@
 		}
 
 		&.large {
-			width: (_size(container-width) * 1.25);
+			width: (_size(container-width) * 1.50);
 		}
 
 		&.xlarge {
-			width: (_size(container-width) * 1.5);
+			width: (_size(container-width) * 2.00);
 		}
 
 		&.max {
@@ -1182,7 +1182,7 @@
 			box-shadow: inset 0 1px 0 0 _palette(border);
 
 			&:before {
-				@include minHeight($size-padding-tb, 5em);
+				// @include minHeight($size-padding-tb, 1em);
 				content: '';
 				display: inline-block;
 				vertical-align: middle;
@@ -1259,6 +1259,7 @@
 				font-size: 3em;
 				line-height: 1.25em;
 				margin: 0;
+				color: _palette(accent1, fg-lighter);
 
 				&:after {
 					margin-top: 0.5em;
@@ -1276,7 +1277,7 @@
 			background: transparentize(_palette(bg), 0.05);
 			bottom: 0;
 			left: 50%;
-			margin-left: -17.5em;
+			transform: translateX(-50%);
 			padding: $size-padding-lr;
 			position: absolute;
 
@@ -1317,10 +1318,10 @@
 			}
 
 			a {
-				color: inherit;
+				color: _palette(fg-bold);
 
 				&:hover {
-					color: _palette(alt, fg-bold) !important;
+					color: _palette(accent1, bg)!important;
 				}
 			}
 
@@ -1328,12 +1329,14 @@
 				font-size: 0.8em;
 				line-height: 1em;
 				padding: 0;
+				color: _palette(accent2, bg);
 
 				li {
 					border-left: solid 1px _palette(alt, fg-lighter);
 					display: inline-block;
 					margin: 0 0 0 1em;
 					padding: 0 0 0 1em;
+					color: inherit;
 
 					&:first-child {
 						border-left: 0;
