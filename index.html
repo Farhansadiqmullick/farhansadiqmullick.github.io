@@ -100,11 +100,13 @@
 						<img src="./images/portfolio/antalvali.jpg" width="900" height="450">
 					</a>
 
-					<a class="image-popup-no-margins" href="./images/portfolio/poa_on_demand.jpg" title="<a target='_blank' href='//poaondemand.ae'>POA on Demand</a>">
+					<a class="image-popup-no-margins" href="./images/portfolio/poa_on_demand.jpg"
+						title="<a target='_blank' href='//poaondemand.ae'>POA on Demand</a>">
 						<img src="./images/portfolio/poa_on_demand.jpg" width="280" height="146">
 					</a>
 
-					<a class="image-popup-no-margins" href="./images/portfolio/eagle_eye.jpg" title="<a target='_blank' href='//eagleeyeguards.com.au/'>Eagle Eye</a>">
+					<a class="image-popup-no-margins" href="./images/portfolio/eagle_eye.jpg"
+						title="<a target='_blank' href='//eagleeyeguards.com.au/'>Eagle Eye</a>">
 						<img src="./images/portfolio/eagle_eye.jpg" width="280" height="146">
 					</a>
 					<a class="image-popup-no-margins" href="./images/portfolio/lancer accessories.png"
@@ -116,7 +118,7 @@
 						<img src="./images/portfolio/ultratech.jpg" width="280" height="146">
 					</a>
 					<a class="image-popup-no-margins" href="./images/portfolio/montyholidayhome.jpg"
-					title="<a target='_blank' href='//montyholidayhome.com/'>Monty Holiday Homes</a>">
+						title="<a target='_blank' href='//montyholidayhome.com/'>Monty Holiday Homes</a>">
 						<img src="./images/portfolio/montyholidayhome.jpg" width="280" height="146">
 					</a>
 				</div>
@@ -171,6 +173,29 @@
 	</section>
 
 	<!-- Scripts -->
+
+	<script>
+		; (function ($) {
+			$(document).ready(function () {
+				function sendEmail(e) {
+					e.preventDefault();
+					let name = document.getElementById("name").value;
+					let email = document.getElementById("email").value;
+					let message = document.getElementById("message").value;
+					let finalmessage = `Name : ${name} <br>  Email : ${email} <br>  Message : ${message} <br>`;
+					Email.send({
+						SecureToken: "01c2cfc6-210a-4abe-b71d-5dee3c264d55",
+						To: "farhansadiq24@gmail.com",
+						From: "info@farhanmullick.com",
+						Subject: "Email come from the website",
+						Body: finalmessage,
+					}).then((message) => alert(message));
+				}
+			});
+		})(jQuery)
+
+
+	</script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
