@@ -138,7 +138,7 @@
 			<header class="major">
 				<h2>Get in touch</h2>
 			</header>
-			<form method="post" action="#">
+			<form id="submit" method="post" action="#">
 				<div class="row gtr-uniform">
 					<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" />
 					</div>
@@ -148,7 +148,7 @@
 					</div>
 					<div class="col-12">
 						<ul class="actions special">
-							<li><input type="submit" value="Send Message" onclick="sendEmail()" class="primary" /></li>
+							<li><input type="submit" value="Send Message" class="primary" /></li>
 						</ul>
 					</div>
 				</div>
@@ -173,29 +173,6 @@
 	</section>
 
 	<!-- Scripts -->
-
-	<script>
-		; (function ($) {
-			$(document).ready(function () {
-				function sendEmail(e) {
-					e.preventDefault();
-					let name = document.getElementById("name").value;
-					let email = document.getElementById("email").value;
-					let message = document.getElementById("message").value;
-					let finalmessage = `Name : ${name} <br>  Email : ${email} <br>  Message : ${message} <br>`;
-					Email.send({
-						SecureToken: "01c2cfc6-210a-4abe-b71d-5dee3c264d55",
-						To: "farhansadiq24@gmail.com",
-						From: "info@farhanmullick.com",
-						Subject: "Email come from the website",
-						Body: finalmessage,
-					}).then((message) => alert(message));
-				}
-			});
-		})(jQuery)
-
-
-	</script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>

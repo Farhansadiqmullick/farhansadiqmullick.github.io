@@ -14,5 +14,20 @@
         duration: 300, // don't foget to change the duration also in CSS
       },
     });
+
+    $("form").on("submit", function (e) {
+      e.preventDefault();
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let message = document.getElementById("message").value;
+      let finalmessage = `Name : ${name} <br>  Email : ${email} <br>  Message : ${message} <br>`;
+      Email.send({
+        SecureToken: "4a2a51f1-0c4d-415e-8ec9-246caaa85121",
+        To: "farhansadiq24@gmail.com",
+        From: "info@farhanmullick.com",
+        Subject: "Email come from the website",
+        Body: finalmessage,
+      }).then((message) => alert(message));
+    });
   });
 })(jQuery);
