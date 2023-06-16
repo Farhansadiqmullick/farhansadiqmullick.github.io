@@ -837,30 +837,38 @@ input[type="radio"] {
 		border: 0;
 		border-radius: 0;
 		padding: 0;
-	}
 
-	@media screen and (max-width: 768px) {
-		text-align: center;
+		.image-popup-no-margins{
+			margin:20px auto;
+			padding: 10px;
+			border-bottom: 1px solid #6f75775c;
+		}
 
-		a {
+
+		@media screen and (max-width: 768px) {
 			text-align: center;
-			margin: 10px auto;
 
-			img {
-				max-width: 500px;
+			a {
+				text-align: center;
+				margin: 10px auto;
+
+				img {
+					max-width: 500px !important;
+				}
 			}
 		}
-	}
 
-	@media screen and (max-width: 500px) {
-		a {
-			text-align: center;
-			margin: 2px auto;
+		@media screen and (max-width: 500px) {
+			a {
+				text-align: center;
+				margin: 2px auto;
 
-			img {
-				max-width: 420px;
+				img {
+					max-width: 380px !important;
+				}
 			}
 		}
+
 	}
 }
 
