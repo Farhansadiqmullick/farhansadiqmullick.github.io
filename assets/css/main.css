@@ -1684,7 +1684,7 @@ input[type=radio] + label:before {
     margin: 2px auto;
   }
   .box.alt a img {
-    max-width: 380px !important;
+    max-width: 330px !important;
   }
 }
 
