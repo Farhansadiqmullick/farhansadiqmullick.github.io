@@ -27,7 +27,12 @@
         From: "info@farhanmullick.com",
         Subject: "Email come from the website",
         Body: finalmessage,
-      }).then((message) => alert(message));
+      }).then( function(message){
+        alert("Message Sent Successfully.");
+       document.getElementById("name").value = '';
+       document.getElementById("email").value = '';
+       document.getElementById("message").value = '';
+      }).catch((err) => "Message sent has been failed, error code: "+err);
     });
   });
 })(jQuery);
