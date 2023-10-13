@@ -276,6 +276,7 @@
       var submit = document.getElementById("submit");
 
       submit.addEventListener("submit", function (e) {
+        e.preventDefault();
         var name = document.getElementById("name").value;
         var email = document.getElementById("email").value;
         var message = document.getElementById("message").value;
@@ -302,6 +303,7 @@
           e.preventDefault(); // prevent form submission
           return; // exit function early
         }
+        e.target.submit();
       });
     </script>
   </body>
