@@ -171,7 +171,7 @@
         <header class="major">
           <h2>Get in touch</h2>
         </header>
-        <form id="submit" method="post" action="#">
+        <form method="post" action="#">
           <div class="row gtr-uniform">
             <div class="col-6 col-12-xsmall">
               <input type="text" name="name" id="name" placeholder="Name" />
@@ -191,7 +191,12 @@
             <div class="col-12">
               <ul class="actions special">
                 <li>
-                  <input type="submit" value="Send Message" class="primary" />
+                  <input
+                    type="submit"
+                    id="submit"
+                    value="Send Message"
+                    class="primary"
+                  />
                 </li>
               </ul>
             </div>
@@ -256,54 +261,54 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-      window.onloadTurnstileCallback = function () {
-        turnstile.render(".cf-turnstile", {
-          sitekey: "0x4AAAAAAALYWl_Jsv2srDc-",
-          callback: function (token) {
-            console.log(`Challenge Success ${token}`);
-            const submit = document.querySelector("input[type='submit']");
-            if (token) {
-              submit.style.pointerEvents = "auto";
-              submit.style.opacity = "1";
-            } else {
-              submit.style.pointerEvents = "none";
-              submit.style.opacity = "0";
-            }
-          },
+      document.addEventListener("DOMContentLoaded", function () {
+        const submit = document.querySelector("form input[type='submit']");
+        window.onloadTurnstileCallback = function () {
+          turnstile.render(".cf-turnstile", {
+            sitekey: "0x4AAAAAAALYWl_Jsv2srDc-",
+            callback: function (token) {
+              console.log(`Challenge Success ${token}`);
+              if (token.length > 10) {
+                submit.style.pointerEvents = "auto";
+                submit.style.opacity = "1";
+              } else {
+                submit.style.pointerEvents = "none";
+                submit.style.opacity = "0";
+              }
+            },
+          });
+        };
+
+        submit.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var message = document.getElementById("message").value;
+
+          // Check if name is 10 characters
+          if (name.length !== 10) {
+            alert("Name must be 10 characters long.");
+            e.preventDefault(); // prevent form submission
+            return; // exit function early
+          }
+
+          // Check email with regex pattern
+          var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+          if (!emailPattern.test(email)) {
+            alert("Please enter a valid email.");
+            e.preventDefault(); // prevent form submission
+            return; // exit function early
+          }
+
+          // Check if message has at least 30 sentences
+          var sentenceCount = (message.match(/[.!?]/g) || []).length;
+          if (sentenceCount < 30) {
+            alert("Message should contain at least 30 sentences.");
+            e.preventDefault(); // prevent form submission
+            return; // exit function early
+          }
+          e.target.submit();
         });
-      };
-
-      var submit = document.getElementById("submit");
-
-      submit.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var message = document.getElementById("message").value;
-
-        // Check if name is 10 characters
-        if (name.length !== 10) {
-          alert("Name must be 10 characters long.");
-          e.preventDefault(); // prevent form submission
-          return; // exit function early
-        }
-
-        // Check email with regex pattern
-        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        if (!emailPattern.test(email)) {
-          alert("Please enter a valid email.");
-          e.preventDefault(); // prevent form submission
-          return; // exit function early
-        }
-
-        // Check if message has at least 30 sentences
-        var sentenceCount = (message.match(/[.!?]/g) || []).length;
-        if (sentenceCount < 30) {
-          alert("Message should contain at least 30 sentences.");
-          e.preventDefault(); // prevent form submission
-          return; // exit function early
-        }
-        e.target.submit();
       });
     </script>
   </body>
