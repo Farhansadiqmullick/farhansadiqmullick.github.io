@@ -263,6 +263,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const submit = document.querySelector("form input[type='submit']");
+        const form = document.querySelector("form");
         window.onloadTurnstileCallback = function () {
           turnstile.render(".cf-turnstile", {
             sitekey: "0x4AAAAAAALYWl_Jsv2srDc-",
@@ -270,17 +271,19 @@
               console.log(`Challenge Success ${token}`);
               if (token.length > 10) {
                 submit.style.pointerEvents = "auto";
-                submit.style.opacity = "1";
+                submit.style.opacity = 1;
               } else {
                 submit.style.pointerEvents = "none";
-                submit.style.opacity = "0";
+                submit.style.opacity = 0;
               }
             },
           });
         };
 
-        submit.addEventListener("submit", function (e) {
+        form.addEventListener("submit", function (e) {
           e.preventDefault();
+          submit.style.pointerEvents = "none";
+          submit.style.opacity = 0;
           var name = document.getElementById("name").value;
           var email = document.getElementById("email").value;
           var message = document.getElementById("message").value;
@@ -307,6 +310,8 @@
             e.preventDefault(); // prevent form submission
             return; // exit function early
           }
+          submit.style.pointerEvents = "auto";
+          submit.style.opacity = 1;
           e.target.submit();
         });
       });
