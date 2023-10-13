@@ -272,6 +272,37 @@
           },
         });
       };
+
+      var submit = document.getElementById("submit");
+
+      submit.addEventListener("submit", function (e) {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        // Check if name is 10 characters
+        if (name.length !== 10) {
+          alert("Name must be 10 characters long.");
+          e.preventDefault(); // prevent form submission
+          return; // exit function early
+        }
+
+        // Check email with regex pattern
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailPattern.test(email)) {
+          alert("Please enter a valid email.");
+          e.preventDefault(); // prevent form submission
+          return; // exit function early
+        }
+
+        // Check if message has at least 30 sentences
+        var sentenceCount = (message.match(/[.!?]/g) || []).length;
+        if (sentenceCount < 30) {
+          alert("Message should contain at least 30 sentences.");
+          e.preventDefault(); // prevent form submission
+          return; // exit function early
+        }
+      });
     </script>
   </body>
 </html>
