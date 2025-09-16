@@ -309,15 +309,14 @@
         // Optional: disable button until EmailJS is ready
         submit.disabled = false;
 
-        // Validate + send
+        // Validate
         submit.addEventListener("click", async function (e) {
           e.preventDefault();
 
           const name = document.getElementById("name").value.trim();
           const email = document.getElementById("email").value.trim();
           const message = document.getElementById("message").value.trim();
-
-          // --- your existing validation ---
+          
           if (name.length <= 10)
             return alert("Name must be more than 10 characters.");
           if (!/^[\w.+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email))
