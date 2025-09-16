@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/magnific-popup-core.css" />
     <link rel="stylesheet" href="assets/css/magnific-popup.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Farhan Mullick</title>
   </head>
 
@@ -42,7 +43,18 @@
             customization. I would love to share and acquire knowledge about
             Laravel, React and keen to learn about optimization and scaling.
           </p>
+          <iframe
+            width="100%"
+            height="600"
+            src="https://www.youtube.com/embed/qWF6KV9m4Qo?si=fqMJcC04j64GlJM-"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
+
         <a href="#two" class="goto-next scrolly">Next</a>
       </div>
     </section>
@@ -86,6 +98,11 @@
               <i class="fab fa-laravel" style="font-size: 2.5rem"></i>
               <h3>Laravel</h3>
             </li>
+
+            <li>
+              <i class="fab fa-vuejs" style="font-size: 2.5rem"></i>
+              <h3>Vue</h3>
+            </li>
           </ul>
         </div>
         <a href="#three" class="goto-next scrolly">Next</a>
@@ -105,13 +122,20 @@
           <p>Check few of the websites, that I have been developed:</p>
         </div>
         <div class="box alt">
-          <div class="row">
+          <div class="row portfolio">
+            <a
+              class="image-popup-no-margins"
+              href="./images/portfolio/mysimsem_portfolio.png"
+              title="<a target='_blank' href='//mysimsem.com'>Mysimsem</a>"
+            >
+              <img src="./images/portfolio/banner/mysimsem.png" />
+            </a>
             <a
               class="image-popup-no-margins"
               href="./images/portfolio/antalvali.png"
               title="<a target='_blank' href='//antalvali.co.hu'>Antalvali</a>"
             >
-              <img src="./images/portfolio/banner/antalvali.jpg" />
+              <img src="./images/portfolio/banner/antalvali.png" />
             </a>
 
             <a
@@ -119,43 +143,36 @@
               href="./images/portfolio/poaondemand.png"
               title="<a target='_blank' href='//poaondemand.ae'>POA on Demand</a>"
             >
-              <img src="./images/portfolio/banner/poa_on_demand.jpg" />
+              <img src="./images/portfolio/banner/poa_on_demand.png" />
             </a>
 
             <a
               class="image-popup-no-margins"
-              href="./images/portfolio/eagleeye.png"
+              href="./images/portfolio/eagle_eye.png"
               title="<a target='_blank' href='//eagleeyeguards.com.au/'>Eagle Eye</a>"
             >
-              <img src="./images/portfolio/banner/eagle_eye.jpg" />
+              <img src="./images/portfolio/banner/eagle_eye.png" />
             </a>
             <a
               class="image-popup-no-margins"
               href="./images/portfolio/lanceraccessories.png"
               title="<a target='_blank' href='//lanceraccessories.com/'>Lancera Accessories</a>"
             >
-              <img src="./images/portfolio/banner/lancer.jpg" />
+              <img src="./images/portfolio/banner/lancer_accessories.png" />
             </a>
             <a
               class="image-popup-no-margins"
-              href="./images/portfolio/ultratechstudio.png"
-              title="<a target='_blank' href='//ultratechstudio.com/'>Ultra Tech Studio</a>"
-            >
-              <img src="./images/portfolio/banner/ultratech.jpg" />
-            </a>
-            <a
-              class="image-popup-no-margins"
-              href="./images/portfolio/montyholidayhome.png"
+              href="./images/portfolio/monty_holiday_home.png"
               title="<a target='_blank' href='//montyholidayhome.com/'>Monty Holiday Homes</a>"
             >
-              <img src="./images/portfolio/banner/montyholidayhome.jpg" />
+              <img src="./images/portfolio/banner/monty_holiday_home.png" />
             </a>
             <a
               class="image-popup-no-margins"
               href="./images/portfolio/bionicsystembd.png"
               title="<a target='_blank' href='//bionicsystembd.com'>Bionic System Website</a>"
             >
-              <img src="./images/portfolio/banner/bionicsystembd.jpg" />
+              <img src="./images/portfolio/banner/bionicsystem.png" />
             </a>
           </div>
         </div>
@@ -257,11 +274,12 @@
     ></script>
     <script src="assets/js/jquery.magnific-popup.js"></script>
     <script src="assets/js/magnific-popup.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
     <script src="assets/js/util.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
+    <script type="module">
+      document.addEventListener("DOMContentLoaded", () => {
         const submit = document.querySelector("form input[type='submit']");
         const form = document.querySelector("form");
         window.onloadTurnstileCallback = function () {
@@ -280,34 +298,74 @@
           });
         };
 
-        submit.addEventListener("click", function (e) {
+        // ====== CONFIG: fill these from your EmailJS account ======
+        const EMAILJS_PUBLIC_KEY = "VUD6AUS5AWtxdX3HK";
+        const EMAILJS_SERVICE_ID = "108288238335691883262";
+        const EMAILJS_TEMPLATE_ID = "template_cyou0zx";
+
+        // Initialize EmailJS
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+        // Optional: disable button until EmailJS is ready
+        submit.disabled = false;
+
+        // Validate + send
+        submit.addEventListener("click", async function (e) {
           e.preventDefault();
-          var name = document.getElementById("name").value;
-          var email = document.getElementById("email").value;
-          var message = document.getElementById("message").value;
 
-          // Check if name is more than 10 characters
-          if (name.length <= 10) {
-            console.log(name.length);
-            alert("Name must be more than 10 characters long.");
-            return; // exit function early
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const message = document.getElementById("message").value.trim();
+
+          // --- your existing validation ---
+          if (name.length <= 10)
+            return alert("Name must be more than 10 characters.");
+          if (!/^[\w.+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email))
+            return alert("Please enter a valid email.");
+          const sentenceCount = (message.match(/[.!?]/g) || []).length;
+          if (sentenceCount <= 1)
+            return alert("Message should contain at least 2 sentences.");
+
+          // Map to your EmailJS template variables
+          const templateParams = {
+            name: name,
+            email: email,
+            message: message,
+          };
+
+          // UI: loading state
+          submit.disabled = true;
+          const oldText = submit.value;
+          submit.value = "Sending...";
+
+          emailjs.init({
+            publicKey: EMAILJS_PUBLIC_KEY,
+            limitRate: {
+              // Set the limit rate for the application
+              id: form,
+              // Allow 1 request per 1min
+              throttle: 60000,
+            },
+          });
+
+          try {
+            // Send the email via EmailJS
+            const formResponse = await emailjs.send(
+              EMAILJS_SERVICE_ID,
+              EMAILJS_TEMPLATE_ID,
+              templateParams
+            );
+            console.log(formResponse);
+
+            alert("Message sent successfully!");
+            form.reset();
+          } catch (err) {
+            console.error(err);
+            alert("Failed to send. Please try again.");
+          } finally {
+            submit.disabled = false;
+            submit.value = oldText;
           }
-
-          // Check email with regex pattern
-          var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-          if (!emailPattern.test(email)) {
-            alert("Please enter a valid email.");
-            return; // exit function early
-          }
-
-          // Check if message has at least 30 sentences
-          var sentenceCount = (message.match(/[.!?]/g) || []).length;
-          if (sentenceCount < 30) {
-            alert("Message should contain at least 30 words.");
-            return; // exit function early
-          }
-
-          form.submit();
         });
       });
     </script>
