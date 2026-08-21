@@ -2170,6 +2170,11 @@ button:disabled,
   vertical-align: middle;
   width: calc(100% - 10px);
 }
+
+.main .container .content p {
+  text-align: left;
+}
+
 .main .goto-next {
   transition: background-color 0.2s ease-in-out;
   background-color: rgba(144, 144, 144, 0.075);
