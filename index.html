@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="is-preload">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
+      name="description"
+      content="Farhan Mullick — web developer working with PHP, Laravel, WordPress, React, Vue and Alpine.js."
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/magnific-popup-core.css" />
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/dist/bundle.css" />
     <title>Farhan Mullick</title>
   </head>
 
-  <body class="is-preload">
+  <body>
     <!-- Header -->
     <section id="header">
       <header class="major">
@@ -38,10 +36,29 @@
             <h2>About Me</h2>
           </header>
           <p>
-            I am a tech enthusiastic. Working mostly on PHP and JS. In corporate
-            world, I focus on WordPress Plugin development and Theme
-            customization. I would love to share and acquire knowledge about
-            Laravel, React and keen to learn about optimization and scaling.
+            I build websites and the systems that run behind them. Most of my
+            work is written in PHP and JavaScript.
+          </p>
+          <p>
+            Day to day I work with <strong>WordPress</strong> — I write custom
+            plugins and reshape themes so a site does exactly what the business
+            needs, instead of what the template came with. When a project is too
+            specific for WordPress, I build it from scratch with
+            <strong>Laravel</strong>, which looks after the parts users never
+            see: logins, databases, payments and sending mail.
+          </p>
+          <p>
+            For the part people actually click on, I pick the tool that fits the
+            job. <strong>React</strong> and <strong>Vue</strong> are what I reach
+            for when a page needs to behave like an app — content that updates
+            straight away, with no waiting for a reload. When a page only needs a
+            small bit of movement, like a dropdown, a set of tabs or a popup, I
+            use <strong>Alpine.js</strong> instead. It does the same job in a few
+            lines and keeps the page light and quick.
+          </p>
+          <p>
+            Alongside all of that, I like making sites load faster and keep
+            running smoothly as they grow busier.
           </p>
           <iframe
             width="100%"
@@ -51,6 +68,7 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
+            loading="lazy"
             allowfullscreen
           ></iframe>
         </div>
@@ -63,7 +81,7 @@
     <section id="two" class="main special">
       <div class="container">
         <span class="image fit primary"
-          ><img src="./images/farhanmullick.jpg" alt=""
+          ><img src="./images/farhanmullick.jpg" alt="Farhan Mullick"
         /></span>
         <div class="content">
           <header class="major">
@@ -103,6 +121,32 @@
               <i class="fab fa-vuejs" style="font-size: 2.5rem"></i>
               <h3>Vue</h3>
             </li>
+            <li>
+              <!-- Font Awesome has no Alpine.js brand icon, so this is inline. -->
+              <svg
+                viewBox="0 0 64 40"
+                width="56"
+                height="35"
+                role="img"
+                aria-label="Alpine.js"
+              >
+                <path
+                  d="M17 5 L33 35 L1 35 Z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M40 13 L56 35 L24 35 Z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <h3>Alpine.js</h3>
+            </li>
           </ul>
         </div>
         <a href="#three" class="goto-next scrolly">Next</a>
@@ -113,7 +157,7 @@
     <section id="three" class="main special">
       <div class="container">
         <span class="image fit primary"
-          ><img src="./images/farhan3.jpg" alt="farhanmullick"
+          ><img src="./images/pic06.jpeg" alt="Farhan Mullick"
         /></span>
         <div class="content">
           <header class="major">
@@ -128,14 +172,17 @@
               href="./images/portfolio/mysimsem_portfolio.png"
               title="<a target='_blank' href='//mysimsem.com'>Mysimsem</a>"
             >
-              <img src="./images/portfolio/banner/mysimsem.png" />
+              <img src="./images/portfolio/banner/mysimsem.png" alt="Mysimsem" />
             </a>
             <a
               class="image-popup-no-margins"
               href="./images/portfolio/antalvali.png"
               title="<a target='_blank' href='//antalvali.co.hu'>Antalvali</a>"
             >
-              <img src="./images/portfolio/banner/antalvali.png" />
+              <img
+                src="./images/portfolio/banner/antalvali.png"
+                alt="Antalvali"
+              />
             </a>
 
             <a
@@ -143,7 +190,10 @@
               href="./images/portfolio/poaondemand.png"
               title="<a target='_blank' href='//poaondemand.ae'>POA on Demand</a>"
             >
-              <img src="./images/portfolio/banner/poa_on_demand.png" />
+              <img
+                src="./images/portfolio/banner/poa_on_demand.png"
+                alt="POA on Demand"
+              />
             </a>
 
             <a
@@ -151,28 +201,40 @@
               href="./images/portfolio/eagle_eye.png"
               title="<a target='_blank' href='//eagleeyeguards.com.au/'>Eagle Eye</a>"
             >
-              <img src="./images/portfolio/banner/eagle_eye.png" />
+              <img
+                src="./images/portfolio/banner/eagle_eye.png"
+                alt="Eagle Eye"
+              />
             </a>
             <a
               class="image-popup-no-margins"
               href="./images/portfolio/lanceraccessories.png"
               title="<a target='_blank' href='//lanceraccessories.com/'>Lancera Accessories</a>"
             >
-              <img src="./images/portfolio/banner/lancer_accessories.png" />
+              <img
+                src="./images/portfolio/banner/lancer_accessories.png"
+                alt="Lancera Accessories"
+              />
             </a>
             <a
               class="image-popup-no-margins"
               href="./images/portfolio/monty_holiday_home.png"
               title="<a target='_blank' href='//montyholidayhome.com/'>Monty Holiday Homes</a>"
             >
-              <img src="./images/portfolio/banner/monty_holiday_home.png" />
+              <img
+                src="./images/portfolio/banner/monty_holiday_home.png"
+                alt="Monty Holiday Homes"
+              />
             </a>
             <a
               class="image-popup-no-margins"
               href="./images/portfolio/bionicsystembd.png"
               title="<a target='_blank' href='//bionicsystembd.com'>Bionic System Website</a>"
             >
-              <img src="./images/portfolio/banner/bionicsystem.png" />
+              <img
+                src="./images/portfolio/banner/bionicsystem.png"
+                alt="Bionic System"
+              />
             </a>
           </div>
         </div>
@@ -188,7 +250,7 @@
         <header class="major">
           <h2>Get in touch</h2>
         </header>
-        <form method="post" action="#">
+        <form id="contact-form" method="post" action="#" novalidate>
           <div class="row gtr-uniform">
             <div class="col-6 col-12-xsmall">
               <input type="text" name="name" id="name" placeholder="Name" />
@@ -204,7 +266,12 @@
                 rows="4"
               ></textarea>
             </div>
-            <div class="cf-turnstile"></div>
+            <div class="col-12">
+              <div class="cf-turnstile"></div>
+            </div>
+            <div class="col-12">
+              <p id="form-status" role="status" aria-live="polite"></p>
+            </div>
             <div class="col-12">
               <ul class="actions special">
                 <li>
@@ -263,110 +330,14 @@
     </section>
 
     <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
+    <!--
+      bundle.js must run before Turnstile's loader so window.onloadTurnstileCallback
+      exists when it fires. Both are deferred, so they run in document order.
+    -->
+    <script src="assets/dist/bundle.js" defer></script>
     <script
       src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
       defer
     ></script>
-    <script src="assets/js/jquery.magnific-popup.js"></script>
-    <script src="assets/js/magnific-popup.js"></script>
-    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
-    <script src="assets/js/util.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script type="module">
-      document.addEventListener("DOMContentLoaded", () => {
-        const submit = document.querySelector("form input[type='submit']");
-        const form = document.querySelector("form");
-        window.onloadTurnstileCallback = function () {
-          turnstile.render(".cf-turnstile", {
-            sitekey: "0x4AAAAAAALYWl_Jsv2srDc-",
-            callback: function (token) {
-              console.log(`Challenge Success ${token}`);
-              if (token.length > 10) {
-                submit.style.pointerEvents = "auto";
-                submit.style.opacity = 1;
-              } else {
-                submit.style.pointerEvents = "none";
-                submit.style.opacity = 0;
-              }
-            },
-          });
-        };
-
-        // ====== CONFIG: fill these from your EmailJS account ======
-        const EMAILJS_PUBLIC_KEY = "VUD6AUS5AWtxdX3HK";
-        const EMAILJS_SERVICE_ID = "108288238335691883262";
-        const EMAILJS_TEMPLATE_ID = "template_cyou0zx";
-
-        // Initialize EmailJS
-        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-
-        // Optional: disable button until EmailJS is ready
-        submit.disabled = false;
-
-        // Validate
-        submit.addEventListener("click", async function (e) {
-          e.preventDefault();
-
-          const name = document.getElementById("name").value.trim();
-          const email = document.getElementById("email").value.trim();
-          const message = document.getElementById("message").value.trim();
-          
-          if (name.length <= 10)
-            return alert("Name must be more than 10 characters.");
-          if (!/^[\w.+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email))
-            return alert("Please enter a valid email.");
-          const sentenceCount = (message.match(/[.!?]/g) || []).length;
-          if (sentenceCount <= 1)
-            return alert("Message should contain at least 2 sentences.");
-
-          // Map to your EmailJS template variables
-          const templateParams = {
-            name: name,
-            email: email,
-            message: message,
-          };
-
-          // UI: loading state
-          submit.disabled = true;
-          const oldText = submit.value;
-          submit.value = "Sending...";
-
-          emailjs.init({
-            publicKey: EMAILJS_PUBLIC_KEY,
-            limitRate: {
-              // Set the limit rate for the application
-              id: form,
-              // Allow 1 request per 1min
-              throttle: 60000,
-            },
-          });
-
-          try {
-            // Send the email via EmailJS
-            const formResponse = await emailjs.send(
-              EMAILJS_SERVICE_ID,
-              EMAILJS_TEMPLATE_ID,
-              templateParams
-            );
-            console.log(formResponse);
-
-            alert("Message sent successfully!");
-            form.reset();
-          } catch (err) {
-            console.error(err);
-            alert("Failed to send. Please try again.");
-          } finally {
-            submit.disabled = false;
-            submit.value = oldText;
-          }
-        });
-      });
-    </script>
   </body>
 </html>

@@ -1,3 +1,8 @@
 node_modules
 .vscode*
 .env
+.env.bak
+.DS_Store
+
+# assets/dist is intentionally NOT ignored — GitHub Pages serves the built
+# bundle directly, so it has to be committed after every `npm run build`.
