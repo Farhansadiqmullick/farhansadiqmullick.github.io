@@ -4,6 +4,22 @@
 	height: auto;
 }
 
+/* <picture> is inline by default, which would box the image in a line box. */
+.portfolio a picture,
+.image picture {
+	display: block;
+}
+
+/*
+	Every img now carries width/height attributes so the browser can reserve the
+	right box before the file arrives. Those attributes also apply as a
+	presentational height, so the sized-to-fit images need height back to auto or
+	they stretch to their intrinsic pixel height.
+*/
+.image.fit img {
+	height: auto;
+}
+
 /* Lightbox — replaces magnific-popup.css and magnific-popup-core.css */
 .lightbox {
 	position: fixed;

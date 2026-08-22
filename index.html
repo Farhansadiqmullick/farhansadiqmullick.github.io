@@ -80,9 +80,28 @@
     <!-- Two -->
     <section id="two" class="main special">
       <div class="container">
-        <span class="image fit primary"
-          ><img src="./images/farhanmullick.jpg" alt="Farhan Mullick"
-        /></span>
+        <span class="image fit primary">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                ./images/farhanmullick-480.webp   480w,
+                ./images/farhanmullick-960.webp   960w,
+                ./images/farhanmullick-1600.webp 1600w
+              "
+              sizes="(max-width: 480px) 100vw, (max-width: 980px) 80vw, 900px"
+            />
+            <img
+              src="./images/farhanmullick.jpg"
+              alt="Farhan Mullick"
+              width="1700"
+              height="1080"
+              loading="lazy"
+              decoding="async"
+              data-bg="./images/farhanmullick-1600.webp"
+            />
+          </picture>
+        </span>
         <div class="content">
           <header class="major">
             <h2>Stack I used to work</h2>
@@ -156,9 +175,28 @@
     <!-- Three -->
     <section id="three" class="main special">
       <div class="container">
-        <span class="image fit primary"
-          ><img src="./images/pic06.jpeg" alt="Farhan Mullick"
-        /></span>
+        <span class="image fit primary">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                ./images/farhan-pic06-480.webp   480w,
+                ./images/farhan-pic06-960.webp   960w,
+                ./images/farhan-pic06-1440.webp 1440w
+              "
+              sizes="(max-width: 480px) 100vw, (max-width: 980px) 80vw, 900px"
+            />
+            <img
+              src="./images/farhan-pic06.jpeg"
+              alt="Farhan Mullick"
+              width="2448"
+              height="3264"
+              loading="lazy"
+              decoding="async"
+              data-bg="./images/farhan-pic06-1440.webp"
+            />
+          </picture>
+        </span>
         <div class="content">
           <header class="major">
             <h2>Portfolio</h2>
@@ -169,72 +207,180 @@
           <div class="row portfolio">
             <a
               class="image-popup-no-margins"
-              href="./images/portfolio/mysimsem_portfolio.png"
+              href="./images/portfolio/mysimsem_portfolio.webp"
               title="<a target='_blank' href='//mysimsem.com'>Mysimsem</a>"
             >
-              <img src="./images/portfolio/banner/mysimsem.png" alt="Mysimsem" />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./images/portfolio/banner/mysimsem-400.webp   400w,
+                    ./images/portfolio/banner/mysimsem-800.webp   800w,
+                    ./images/portfolio/banner/mysimsem-1200.webp 1200w
+                  "
+                  sizes="(max-width: 480px) 100vw, (max-width: 980px) 80vw, 880px"
+                />
+                <img
+                  src="./images/portfolio/banner/mysimsem.png"
+                  alt="Mysimsem"
+                  width="1870"
+                  height="962"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </a>
             <a
               class="image-popup-no-margins"
-              href="./images/portfolio/antalvali.png"
+              href="./images/portfolio/antalvali.webp"
               title="<a target='_blank' href='//antalvali.co.hu'>Antalvali</a>"
             >
-              <img
-                src="./images/portfolio/banner/antalvali.png"
-                alt="Antalvali"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./images/portfolio/banner/antalvali-400.webp   400w,
+                    ./images/portfolio/banner/antalvali-800.webp   800w,
+                    ./images/portfolio/banner/antalvali-1200.webp 1200w
+                  "
+                  sizes="(max-width: 480px) 100vw, (max-width: 980px) 80vw, 880px"
+                />
+                <img
+                  src="./images/portfolio/banner/antalvali.png"
+                  alt="Antalvali"
+                  width="1854"
+                  height="902"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </a>
 
             <a
               class="image-popup-no-margins"
-              href="./images/portfolio/poaondemand.png"
+              href="./images/portfolio/poaondemand.webp"
               title="<a target='_blank' href='//poaondemand.ae'>POA on Demand</a>"
             >
-              <img
-                src="./images/portfolio/banner/poa_on_demand.png"
-                alt="POA on Demand"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./images/portfolio/banner/poa_on_demand-400.webp   400w,
+                    ./images/portfolio/banner/poa_on_demand-800.webp   800w,
+                    ./images/portfolio/banner/poa_on_demand-1200.webp 1200w
+                  "
+                  sizes="(max-width: 480px) 100vw, (max-width: 980px) 80vw, 880px"
+                />
+                <img
+                  src="./images/portfolio/banner/poa_on_demand.png"
+                  alt="POA on Demand"
+                  width="1849"
+                  height="948"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </a>
 
             <a
               class="image-popup-no-margins"
-              href="./images/portfolio/eagle_eye.png"
+              href="./images/portfolio/eagle_eye.webp"
               title="<a target='_blank' href='//eagleeyeguards.com.au/'>Eagle Eye</a>"
             >
-              <img
-                src="./images/portfolio/banner/eagle_eye.png"
-                alt="Eagle Eye"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./images/portfolio/banner/eagle_eye-400.webp   400w,
+                    ./images/portfolio/banner/eagle_eye-800.webp   800w,
+                    ./images/portfolio/banner/eagle_eye-1200.webp 1200w
+                  "
+                  sizes="(max-width: 480px) 100vw, (max-width: 980px) 80vw, 880px"
+                />
+                <img
+                  src="./images/portfolio/banner/eagle_eye.png"
+                  alt="Eagle Eye"
+                  width="1852"
+                  height="942"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </a>
             <a
               class="image-popup-no-margins"
-              href="./images/portfolio/lanceraccessories.png"
+              href="./images/portfolio/lanceraccessories.webp"
               title="<a target='_blank' href='//lanceraccessories.com/'>Lancera Accessories</a>"
             >
-              <img
-                src="./images/portfolio/banner/lancer_accessories.png"
-                alt="Lancera Accessories"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./images/portfolio/banner/lancer_accessories-400.webp   400w,
+                    ./images/portfolio/banner/lancer_accessories-800.webp   800w,
+                    ./images/portfolio/banner/lancer_accessories-1200.webp 1200w
+                  "
+                  sizes="(max-width: 480px) 100vw, (max-width: 980px) 80vw, 880px"
+                />
+                <img
+                  src="./images/portfolio/banner/lancer_accessories.png"
+                  alt="Lancera Accessories"
+                  width="1852"
+                  height="941"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </a>
             <a
               class="image-popup-no-margins"
-              href="./images/portfolio/monty_holiday_home.png"
+              href="./images/portfolio/monty_holiday_home.webp"
               title="<a target='_blank' href='//montyholidayhome.com/'>Monty Holiday Homes</a>"
             >
-              <img
-                src="./images/portfolio/banner/monty_holiday_home.png"
-                alt="Monty Holiday Homes"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./images/portfolio/banner/monty_holiday_home-400.webp   400w,
+                    ./images/portfolio/banner/monty_holiday_home-800.webp   800w,
+                    ./images/portfolio/banner/monty_holiday_home-1200.webp 1200w
+                  "
+                  sizes="(max-width: 480px) 100vw, (max-width: 980px) 80vw, 880px"
+                />
+                <img
+                  src="./images/portfolio/banner/monty_holiday_home.png"
+                  alt="Monty Holiday Homes"
+                  width="1848"
+                  height="944"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </a>
             <a
               class="image-popup-no-margins"
-              href="./images/portfolio/bionicsystembd.png"
+              href="./images/portfolio/bionicsystembd.webp"
               title="<a target='_blank' href='//bionicsystembd.com'>Bionic System Website</a>"
             >
-              <img
-                src="./images/portfolio/banner/bionicsystem.png"
-                alt="Bionic System"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./images/portfolio/banner/bionicsystem-400.webp   400w,
+                    ./images/portfolio/banner/bionicsystem-800.webp   800w,
+                    ./images/portfolio/banner/bionicsystem-1200.webp 1200w
+                  "
+                  sizes="(max-width: 480px) 100vw, (max-width: 980px) 80vw, 880px"
+                />
+                <img
+                  src="./images/portfolio/banner/bionicsystem.png"
+                  alt="Bionic System"
+                  width="1847"
+                  height="943"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </a>
           </div>
         </div>

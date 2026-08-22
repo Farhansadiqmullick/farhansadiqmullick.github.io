@@ -169,13 +169,14 @@ html {
 html {
   background-color: #313a3d;
   background-attachment: fixed, fixed;
-  background-image: url("../../images/overlay.png"), url("../../images/farhan_bg.png");
+  background-image: url("../../images/overlay.png"), url("../../images/farhan_bg.webp");
   background-position: top left, center center;
   background-repeat: repeat, none;
   background-size: auto, cover;
 }
 @media screen and (min-width: 550px) and (max-width: 1024px) {
   html {
+    background-image: url("../../images/overlay.png"), url("../../images/farhan_bg-1280.webp");
     background-position: top left, center right;
   }
 }

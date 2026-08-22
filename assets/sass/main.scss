@@ -200,12 +200,14 @@ html {
 html {
 	background-color: _palette(accent2, bg);
 	background-attachment: fixed, fixed;
-	background-image: url('images/overlay.png'), url('../../images/farhan_bg.png');
+	background-image: url('images/overlay.png'), url('../../images/farhan_bg.webp');
 	background-position: top left, center center;
 	background-repeat: repeat, none;
 	background-size: auto, cover;
 
+	// Tablets get a 1280px-wide cut of the same shot instead of the full 1920.
 	@media screen and (min-width: 550px) and (max-width: 1024px) {
+		background-image: url('images/overlay.png'), url('../../images/farhan_bg-1280.webp');
 		background-position: top left, center right;
 	}
 
