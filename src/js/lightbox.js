@@ -89,7 +89,7 @@ function buildOverlay() {
 	overlay.innerHTML = `
 		<button type="button" class="lightbox__close" aria-label="Close">&times;</button>
 		<div class="lightbox__figure">
-			<img class="lightbox__image" src="" alt="" />
+			<img class="lightbox__image" src="" alt="" decoding="async" />
 			<div class="lightbox__caption"></div>
 		</div>
 	`;

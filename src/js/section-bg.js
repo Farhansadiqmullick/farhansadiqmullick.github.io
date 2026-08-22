@@ -21,15 +21,22 @@ export function initSectionBackgrounds() {
 	);
 
 	sections.forEach((section) => {
-		const image = section.querySelector(".image.primary > img");
+		const image = section.querySelector(".image.primary img");
 
 		if (!image) return;
+
+		/*
+			data-bg points at a WebP sized for a full-viewport cover. The <img> itself
+			is display:none up here and lazy, so its own src may never be fetched —
+			reading it would leave the layer blank.
+		*/
+		const source = image.dataset.bg || image.getAttribute("src");
 
 		const bg = document.createElement("div");
 
 		bg.className = "main-bg";
 		bg.id = `${section.id}-bg`;
-		bg.style.backgroundImage = `url("${OVERLAY}"), url("${image.getAttribute("src")}")`;
+		bg.style.backgroundImage = `url("${OVERLAY}"), url("${source}")`;
 
 		document.body.appendChild(bg);
 
